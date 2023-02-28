@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/metier/Cours.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/metier/Formateur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/metier/Infos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/metier/Local.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/metier/SessionCours.java" afterDir="false" />
+    <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="-creation of metier classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metier/Formateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/Formateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metier/Infos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/Infos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metier/SessionCours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/SessionCours.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,8 +58,17 @@
       <updated>1676451388761</updated>
       <workItem from="1677244671903" duration="1482000" />
       <workItem from="1677432152986" duration="657000" />
-      <workItem from="1677494776071" duration="2940000" />
+      <workItem from="1677494776071" duration="3586000" />
+      <workItem from="1677577435509" duration="6023000" />
     </task>
+    <task id="LOCAL-00001" summary="-creation of metier classes">
+      <created>1677500336513</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677500336513</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -77,5 +84,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="-creation of metier classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="-creation of metier classes" />
   </component>
 </project>

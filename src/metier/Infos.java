@@ -2,19 +2,24 @@ package metier;
 
 public class Infos
 {
-    private int nh,id_formateur,id_SessionCours;
+    private int nh;
+    Formateur formateur;
+    SessionCours sessionCours;
+
 
     /**
      *
-     * @param nh
-     * @param id_formateur
-     * @param id_SessionCours
+     * @param formateur
+     * @param sessionCours
      */
-    public Infos(int nh, int id_formateur, int id_SessionCours) {
-        setNh(nh);
-        setId_formateur(id_formateur);
-        setId_SessionCours(id_SessionCours);
+    public Infos(Formateur formateur, SessionCours sessionCours) {
+        setNh();
+        setId_formateur(formateur);
+        setId_SessionCours(sessionCours);
+
     }
+
+
 
     /**
      *
@@ -28,39 +33,44 @@ public class Infos
      * /
      * @return
      */
-    public int getId_formateur() {
-        return id_formateur;
+    public Formateur getFormateur() {
+        return formateur;
     }
 
     /**
      *
      * @return
      */
-    public int getId_SessionCours() {
-        return id_SessionCours;
+    public SessionCours getSessionCours() {
+        return sessionCours;
     }
 
     /**
      *
-     * @param nh
+     * @return
      */
-    public void setNh(int nh) {
-        this.nh = nh;
+    private Boolean setNh() {
+
+        nh=sessionCours.getCour().getHeures()*sessionCours.getNbreJours();
+        return true;
+        //Todo vérifier que le nombre total d’heures_formateur pour une session correspond bien au nombre total d’heures du cours auquel la session correspond.
     }
 
     /**
      *
-     * @param id_formateur
+     * @param formateur
      */
-    public void setId_formateur(int id_formateur) {
-        this.id_formateur = id_formateur;
+    public void setId_formateur(Formateur formateur) {
+        this.formateur = formateur;
     }
 
     /**
      *
-     * @param id_SessionCours
+     * @param sessionCours
      */
-    public void setId_SessionCours(int id_SessionCours) {
-        this.id_SessionCours = id_SessionCours;
+    public void setId_SessionCours(SessionCours sessionCours) {
+        this.sessionCours = sessionCours;
     }
+
+
 }

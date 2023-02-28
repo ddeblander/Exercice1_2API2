@@ -5,6 +5,7 @@ public class Formateur
     private int id;
     private String matricule,nom,prenom;
 
+
     /**
      *
      * @param id
