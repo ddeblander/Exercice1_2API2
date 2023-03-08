@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="-creation of metier classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metier/Cours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/Cours.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/metier/Formateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/Formateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/metier/Infos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/Infos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metier/Local.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/Local.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/metier/SessionCours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/SessionCours.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,6 +62,7 @@
       <workItem from="1677432152986" duration="657000" />
       <workItem from="1677494776071" duration="3586000" />
       <workItem from="1677577435509" duration="6023000" />
+      <workItem from="1678272993419" duration="1152000" />
     </task>
     <task id="LOCAL-00001" summary="-creation of metier classes">
       <created>1677500336513</created>

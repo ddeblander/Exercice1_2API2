@@ -1,9 +1,15 @@
 package metier;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Local
 {
     private int id,places;
     private String sigle, description;
+
+    private List<SessionCours> lSessions;
+
 
     /**
      *
@@ -17,6 +23,8 @@ public class Local
         setPlaces(places);
         setSigle(sigle);
         setDescription(description);
+
+        lSessions= new ArrayList<>();
     }
 
     /**
@@ -81,5 +89,15 @@ public class Local
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Local{" +
+                "id=" + id +
+                ", places=" + places +
+                ", sigle='" + sigle + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

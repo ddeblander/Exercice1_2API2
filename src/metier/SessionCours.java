@@ -167,4 +167,16 @@ public class SessionCours
         }
 
     }
+
+    @Override
+    public String toString() {
+        return "SessionCours{" +
+                "id=" + id +
+                ", nbreJours=" + nbreJours +
+                ", dateDebut=" + dateDebut +
+                ", cour=" + cour +
+                ", listFormateur=" + listFormateur +
+                ", Local=" + Local +
+                '}';
+    }
 }

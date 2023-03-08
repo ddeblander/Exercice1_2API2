@@ -83,4 +83,18 @@ public class Formateur
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        return "Formateur{" +
+                "id=" + id +
+                ", matricule='" + matricule + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                '}';
+    }
 }

@@ -4,18 +4,15 @@ public class Infos
 {
     private int nh;
     Formateur formateur;
-    SessionCours sessionCours;
 
 
     /**
      *
      * @param formateur
-     * @param sessionCours
      */
-    public Infos(Formateur formateur, SessionCours sessionCours) {
-        setNh();
+    public Infos(Formateur formateur, int nh) {
+        setNh(nh);
         setId_formateur(formateur);
-        setId_SessionCours(sessionCours);
 
     }
 
@@ -37,21 +34,15 @@ public class Infos
         return formateur;
     }
 
-    /**
-     *
-     * @return
-     */
-    public SessionCours getSessionCours() {
-        return sessionCours;
-    }
 
     /**
      *
+     * @param nhi
      * @return
      */
-    private Boolean setNh() {
+    private Boolean setNh(int nhi) {
 
-        nh=sessionCours.getCour().getHeures()*sessionCours.getNbreJours();
+        nh=nhi;
         return true;
         //Todo vérifier que le nombre total d’heures_formateur pour une session correspond bien au nombre total d’heures du cours auquel la session correspond.
     }
@@ -66,11 +57,13 @@ public class Infos
 
     /**
      *
-     * @param sessionCours
+     * @return
      */
-    public void setId_SessionCours(SessionCours sessionCours) {
-        this.sessionCours = sessionCours;
+    @Override
+    public String toString() {
+        return "Infos{" +
+                "nh=" + nh +
+                ", formateur=" + formateur +
+                '}';
     }
-
-
 }

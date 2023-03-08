@@ -1,9 +1,14 @@
 package metier;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Cours
 {
     private int id,heures;
     private String codeCours,description;
+
+    private List<SessionCours> lSessions;
 
     /**
      *
@@ -17,6 +22,8 @@ public class Cours
         setHeures(heures);
         setCodeCours(codeCours);
         setDescription(description);
+
+        lSessions= new ArrayList<>();
     }
 
     /**
@@ -81,5 +88,19 @@ public class Cours
      */
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        return "Cours{" +
+                "id=" + id +
+                ", heures=" + heures +
+                ", codeCours='" + codeCours + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
