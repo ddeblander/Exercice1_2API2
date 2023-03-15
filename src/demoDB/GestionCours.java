@@ -1,6 +1,6 @@
 package demoDB;
 
-import myconnections.DBConnection;
+import model.DBConnection;
 
 import java.sql.Connection;
 
