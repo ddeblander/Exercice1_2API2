@@ -25,6 +25,13 @@ public class Cours
 
         lSessions= new ArrayList<>();
     }
+    public Cours(int heures, String codeCours, String description) {
+        setHeures(heures);
+        setCodeCours(codeCours);
+        setDescription(description);
+
+        lSessions= new ArrayList<>();
+    }
 
     /**
      *

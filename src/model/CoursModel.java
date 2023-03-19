@@ -47,6 +47,11 @@ public class CoursModel implements DAO
     }
 
     @Override
+    public Object getByID(int id) {
+        return null;
+    }
+
+
     public Cours getByCodeCours(int id) {
         return cours.get(id);
     }

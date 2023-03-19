@@ -8,5 +8,5 @@ public interface DAO<T>
     boolean remove(T o);
     boolean update(T o);
     List<T> getAll();
-    T getByCodeCours(int id);
+    T getByID(int id);
 }
