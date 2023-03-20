@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="-add ToString and fixe navigability issue about the UML">
+    <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="-add and get functionnal for Cours.&#10;Have to get formateur by cours, all session by local and bewteen 2 dates">
+      <change afterPath="$PROJECT_DIR$/src/model/FormateurModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/FormateurModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/SessionCoursModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenter/CoursPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/CoursViewConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ViewInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exercice1_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Exercice1_2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/metier/Cours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/Cours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/demoDB/GestionCours.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/CoursModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CoursModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/CoursModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CoursModelDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +26,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -39,23 +45,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Program Files/Java/jdk-19/lib/ojdbc8.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.20023558",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/Java/jdk-19/lib/ojdbc8.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.20023558&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,7 +77,8 @@
       <workItem from="1678354427265" duration="177000" />
       <workItem from="1678874743043" duration="4554000" />
       <workItem from="1679146852930" duration="122000" />
-      <workItem from="1679225840760" duration="10092000" />
+      <workItem from="1679225840760" duration="10363000" />
+      <workItem from="1679322033635" duration="8631000" />
     </task>
     <task id="LOCAL-00001" summary="-creation of metier classes">
       <created>1677500336513</created>
@@ -95,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678275029976</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="-add and get functionnal for Cours.&#10;Have to get formateur by cours, all session by local and bewteen 2 dates">
+      <created>1679253514518</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679253514518</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +129,7 @@
     <MESSAGE value="-creation of metier classes" />
     <MESSAGE value="-add ToString and fixe navigability issue about the UML" />
     <MESSAGE value="-basic connection to DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="-basic connection to DB" />
+    <MESSAGE value="-add and get functionnal for Cours.&#10;Have to get formateur by cours, all session by local and bewteen 2 dates" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add and get functionnal for Cours.&#10;Have to get formateur by cours, all session by local and bewteen 2 dates" />
   </component>
 </project>

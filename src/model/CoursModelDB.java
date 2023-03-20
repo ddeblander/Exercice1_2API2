@@ -32,29 +32,23 @@ public class CoursModelDB implements DAO
     @Override
     public Cours add(Object o) {
         Cours c=(Cours) o;
-        Scanner sc = new Scanner(System.in);
+
         String query1 = "insert into APICOURS(codecours,description,heures) values(?,?,?)";
         String query2 = "select * from APICOURS where codecours= ? and description =? and heures =?";
         try (PreparedStatement pstm1 = dbConnect.prepareStatement(query1);
              PreparedStatement pstm2 = dbConnect.prepareStatement(query2))
         {
-            System.out.println("Nouveau Cours :");
-            System.out.println("introduire Code du cours :");
-            String codeCour=sc.nextLine();
-            System.out.println("introduire Description du cours :");
-            String desc=sc.nextLine();
-            System.out.println("introduire heures cours :");
-            int heures=sc.nextInt();
 
-            pstm1.setString(1,codeCour);
-            pstm1.setString(2,desc);
-            pstm1.setInt(3,heures);
+
+            pstm1.setString(1,c.getCodeCours());
+            pstm1.setString(2,c.getDescription());
+            pstm1.setInt(3,c.getHeures());
             int res=pstm1.executeUpdate();
             System.out.println("res"+res);
 
-            pstm2.setString(1, codeCour);
-            pstm2.setString(2, desc);
-            pstm2.setInt(3, heures);
+            pstm2.setString(1, c.getCodeCours());
+            pstm2.setString(2, c.getDescription());
+            pstm2.setInt(3, c.getHeures());
             try (ResultSet rs = pstm2.executeQuery()) {
 
                 if (rs.next()) {
@@ -62,7 +56,7 @@ public class CoursModelDB implements DAO
                     System.out.println("numero de cours inséré =" + nc);
 
                 } else {
-                    System.out.println("erreur lors de l'insertion ,numero de client introuvable");
+                    System.out.println("erreur lors de l'insertion ,numero de cours introuvable");
                 }
 
             }
@@ -78,11 +72,40 @@ public class CoursModelDB implements DAO
 
     @Override
     public boolean remove(Object o) {
+        Cours c=(Cours) o;
+        String query = "delete  from apicours   where id = ?";
+        try( PreparedStatement pstm = dbConnect.prepareStatement(query))
+        {
+            pstm.setInt(1,c.getId());
+            pstm.executeQuery();
+            return true;
+
+        }
+        catch (SQLException e) {
+            System.out.println("erreur SQL =" + e);
+        }
+        DBConnection.closeConnection();
         return false;
     }
 
     @Override
-    public boolean update(Object o) {
+    public boolean update(Object o)
+    {
+        Cours c=(Cours) o;
+        String query = "update apicours set heures = ? ,description= ?  where codecours = ?";
+        try( PreparedStatement pstm = dbConnect.prepareStatement(query))
+        {
+            pstm.setInt(1,c.getHeures());
+            pstm.setString(2,c.getDescription());
+            pstm.setString(3,c.getCodeCours());
+            pstm.executeQuery();
+            return true;
+
+        }
+        catch (SQLException e) {
+            System.out.println("erreur SQL =" + e);
+        }
+        DBConnection.closeConnection();
         return false;
     }
 

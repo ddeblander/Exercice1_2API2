@@ -9,11 +9,14 @@ public class CoursModel implements DAO
 {
     private List<Cours> cours;
 
-    public CoursModel() {
+    public CoursModel()
+    {
+
         cours=new ArrayList<>();
     }
     public Cours add(Object o)
     {
+
         Cours c =(Cours) o;
         if(cours.contains(c))
             return null;
