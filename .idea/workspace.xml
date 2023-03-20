@@ -4,19 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="-add and get functionnal for Cours.&#10;Have to get formateur by cours, all session by local and bewteen 2 dates">
-      <change afterPath="$PROJECT_DIR$/src/model/FormateurModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/FormateurModelDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/SessionCoursModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presenter/CoursPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/CoursViewConsole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/ViewInterface.java" afterDir="false" />
+    <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="-add CRUD for Cours functionnal(need Exceptions)">
+      <change afterPath="$PROJECT_DIR$/src/model/LocalModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenter/FormateurPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/FormateurViewConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/demoDB/GestionCours.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/CoursModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CoursModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metier/SessionCours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/SessionCours.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/CoursModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CoursModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/FormateurModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/FormateurModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenter/CoursPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenter/CoursPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/CoursViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CoursViewConsole.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +77,7 @@
       <workItem from="1678874743043" duration="4554000" />
       <workItem from="1679146852930" duration="122000" />
       <workItem from="1679225840760" duration="10363000" />
-      <workItem from="1679322033635" duration="8631000" />
+      <workItem from="1679322033635" duration="18767000" />
     </task>
     <task id="LOCAL-00001" summary="-creation of metier classes">
       <created>1677500336513</created>
@@ -108,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679253514518</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="-add CRUD for Cours functionnal(need Exceptions)">
+      <created>1679333681560</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679333681560</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -130,6 +136,7 @@
     <MESSAGE value="-add ToString and fixe navigability issue about the UML" />
     <MESSAGE value="-basic connection to DB" />
     <MESSAGE value="-add and get functionnal for Cours.&#10;Have to get formateur by cours, all session by local and bewteen 2 dates" />
-    <option name="LAST_COMMIT_MESSAGE" value="-add and get functionnal for Cours.&#10;Have to get formateur by cours, all session by local and bewteen 2 dates" />
+    <MESSAGE value="-add CRUD for Cours functionnal(need Exceptions)" />
+    <option name="LAST_COMMIT_MESSAGE" value="-add CRUD for Cours functionnal(need Exceptions)" />
   </component>
 </project>

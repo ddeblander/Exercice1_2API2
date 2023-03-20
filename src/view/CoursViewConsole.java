@@ -1,6 +1,7 @@
 package view;
 
 import metier.Cours;
+import metier.Formateur;
 import presenter.CoursPresenter;
 
 import java.util.ArrayList;
@@ -29,13 +30,25 @@ public class CoursViewConsole implements ViewInterface
     @Override
     public void setListDatas(List listD)
     {
-        this.lc=listD;
-        int i=1;
-        for(Cours c : lc){
-            System.out.println((i++)+"."+c);
+        Cours c=new Cours(0,0,"","");
+        if(!listD.isEmpty())
+        {
+            //temporaire, juste pour différencier Formateur et Cours et afficher mais sera remplacé par une FormateurViewConsole + l'envoie du cours selectionné
+            if(listD.get(0).getClass().equals(c.getClass()))
+            {
+                this.lc=listD;
+            }
         }
+
+
+        int i=1;
+        for(Object o : listD){
+            System.out.println((i++)+"."+o.toString());
+        }
+
         menu();
     }
+
 
     @Override
     public void affMsg(String msg)
@@ -45,7 +58,7 @@ public class CoursViewConsole implements ViewInterface
     public void menu()
     {
         do{
-            System.out.println("1.ajout 2.retrait 3.update 4.fin");
+            System.out.println("1.ajout 2.retrait 3.update 4.affiché formateur par cours 5.fin ");
 
             int ch = sc.nextInt();
             sc.skip("\n");
@@ -55,7 +68,10 @@ public class CoursViewConsole implements ViewInterface
                 case 2 : remove();
                     break;
                 case 3 : update();
-                case 4 : System.exit(0);
+                    break;
+                case 4 : getFormateurByCours();
+                    break;
+                case 5 : System.exit(0);
             }
         }while(true);
     }
@@ -82,6 +98,16 @@ public class CoursViewConsole implements ViewInterface
             System.out.println("introduire nouvelle heures cours :");
             cours.setHeures(sc.nextInt());
             presenter.updateCours(cours);
+        }
+    }
+    public void getFormateurByCours()
+    {
+        System.out.println("numéro de ligne : ");
+        int nl =  sc.nextInt()-1;
+        sc.skip("\n");
+        if (nl >= 0) {
+            Cours cours = lc.get(nl);
+            presenter.getFormateursByCours(cours);
         }
     }
     public void remove()

@@ -1,7 +1,10 @@
 package presenter;
 
 import metier.Cours;
+import metier.Formateur;
 import model.DAO;
+import model.FormateurModelDB;
+import view.CoursViewConsole;
 import view.ViewInterface;
 
 import java.util.List;
@@ -9,6 +12,7 @@ import java.util.List;
 public class CoursPresenter
 {
     private DAO model;
+    FormateurModelDB fmDB= new FormateurModelDB();
     private ViewInterface view;
 
     public CoursPresenter(DAO model, ViewInterface view) {
@@ -44,5 +48,10 @@ public class CoursPresenter
         else view.affMsg("client non effacé");
         List<Cours> clients = model.getAll();
         view.setListDatas(clients);
+    }
+    public void getFormateursByCours(Cours c)
+    {
+        List<Formateur> lf=fmDB.getFormateurByCours(c);
+        view.setListDatas(lf);
     }
 }

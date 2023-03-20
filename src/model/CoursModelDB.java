@@ -1,6 +1,7 @@
 package model;
 
 import metier.Cours;
+import metier.Formateur;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -18,6 +19,7 @@ public class CoursModelDB implements DAO
     String codecours;
     String description;
     int heures;
+    private Connection dbConnect;
     public CoursModelDB()
     {
         dbConnect = DBConnection.getConnection();
@@ -28,7 +30,7 @@ public class CoursModelDB implements DAO
         lCours= new ArrayList<>();
     }
 
-    private Connection dbConnect;
+
     @Override
     public Cours add(Object o) {
         Cours c=(Cours) o;
@@ -144,7 +146,32 @@ public class CoursModelDB implements DAO
     }
 
     @Override
-    public Object getByID(int id) {
+    public Cours getByID(int id)
+    {
+        String query1="select * from APICOURS where ID = ?";
+
+        try (PreparedStatement pstm = dbConnect.prepareStatement(query1))
+        {
+            pstm.setInt(1, id);
+            try (ResultSet rs = pstm.executeQuery())
+            {
+                while(rs.next())
+                {
+                    id = rs.getInt("ID");
+                    codecours = rs.getString("CODECOURS");
+                    description = rs.getString("DESCRIPTION");
+                    heures = rs.getInt("HEURES");
+                    return new Cours(id,heures,codecours,description);
+                }
+
+            }
+
+
+        } catch (SQLException e) {
+            System.out.println("erreur " + e);
+
+        }
+        DBConnection.closeConnection();
         return null;
     }
 
