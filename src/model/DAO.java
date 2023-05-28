@@ -9,4 +9,5 @@ public interface DAO<T>
     boolean update(T o);
     List<T> getAll();
     T getByID(int id);
+    T read(T rech);
 }

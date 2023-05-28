@@ -6,27 +6,18 @@ import model.DAO;
 import model.FormateurModelDB;
 import view.ViewInterface;
 
+import java.util.Comparator;
 import java.util.List;
 
-public class FormateurPresenter
+public class FormateurPresenter extends Presenter<Formateur>
 {
     private FormateurModelDB model;
     private ViewInterface view;
 
-    public FormateurPresenter(FormateurModelDB model, ViewInterface view) {
-        this.model = model;
-        this.view = view;
-        this.view.setPresenter(this);
+    public FormateurPresenter(DAO<Formateur> model, ViewInterface<Formateur> view, Comparator<Formateur> cmp) {
+        super(model, view, cmp);
     }
 
-    public void start() {
-        List<Formateur> lform = model.getAll();
-        view.setListDatas(lform);
-    }
-    public void getFormateurByCours(Cours c) {
-        List<Formateur> lform = model.getFormateurByCours(c);
-        view.setListDatas(lform);
-    }
 
 
 

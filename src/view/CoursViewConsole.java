@@ -3,78 +3,24 @@ package view;
 import metier.Cours;
 import metier.Formateur;
 import presenter.CoursPresenter;
+import presenter.Presenter;
+import presenter.SpecialCoursPresenter;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
-public class CoursViewConsole implements ViewInterface
+import static utilitaires.Utilitaire.affListe;
+
+public class CoursViewConsole extends AbstractViewConsole<Cours>
 {
 
-    private Scanner sc;
-    private CoursPresenter presenter;
-    private List<Cours>lc;
-
-    public CoursViewConsole()
-    {
-        lc= new ArrayList<>();
-        sc=new Scanner(System.in);
-    }
-
-    @Override
-    public void setPresenter(Object presenter)
-    {
-        this.presenter=(CoursPresenter) presenter;
-    }
-
-    @Override
-    public void setListDatas(List listD)
-    {
-        Cours c=new Cours(0,0,"","");
-        if(!listD.isEmpty())
-        {
-            //temporaire, juste pour différencier Formateur et Cours et afficher mais sera remplacé par une FormateurViewConsole + l'envoie du cours selectionné
-            if(listD.get(0).getClass().equals(c.getClass()))
-            {
-                this.lc=listD;
-            }
-        }
 
 
-        int i=1;
-        for(Object o : listD){
-            System.out.println((i++)+"."+o.toString());
-        }
-
-        menu();
-    }
 
 
     @Override
-    public void affMsg(String msg)
-    {
-        System.out.println("information:"+msg);
-    }
-    public void menu()
-    {
-        do{
-            System.out.println("1.ajout 2.retrait 3.update 4.affiché formateur par cours 5.fin ");
-
-            int ch = sc.nextInt();
-            sc.skip("\n");
-            switch(ch){
-                case 1: add();
-                    break;
-                case 2 : remove();
-                    break;
-                case 3 : update();
-                    break;
-                case 4 : getFormateurByCours();
-                    break;
-                case 5 : System.exit(0);
-            }
-        }while(true);
-    }
     public void add()
     {
         System.out.println("Nouveau Cours :");
@@ -84,40 +30,48 @@ public class CoursViewConsole implements ViewInterface
         String desc=sc.nextLine();
         System.out.println("introduire heures cours :");
         int heures=sc.nextInt();
-        presenter.addCours(new Cours(heures,codeCour,desc));
+        try
+        {
+            presenter.add(new Cours(heures,codeCour,desc));
+        } catch (Exception e) {
+            System.out.println("erreur : " + e);
+        }
+        ldatas=presenter.getAll();//rafraichissement
+        affListe(ldatas);
+
     }
+
+    @Override
+    protected void search()
+    {
+
+
+    }
+    @Override
     public void update()
     {
         System.out.println("numéro de ligne : ");
         int nl =  sc.nextInt()-1;
         sc.skip("\n");
         if (nl >= 0) {
-            Cours cours = lc.get(nl);
+            Cours cours = ldatas.get(nl);
             System.out.println("introduire la nouvelle Description du cours :");
             cours.setDescription(sc.nextLine());
             System.out.println("introduire nouvelle heures cours :");
             cours.setHeures(sc.nextInt());
-            presenter.updateCours(cours);
+            presenter.update(cours);
         }
     }
-    public void getFormateurByCours()
+    @Override
+    public void special()
     {
         System.out.println("numéro de ligne : ");
         int nl =  sc.nextInt()-1;
         sc.skip("\n");
         if (nl >= 0) {
-            Cours cours = lc.get(nl);
-            presenter.getFormateursByCours(cours);
+            Cours cours = ldatas.get(nl);
+            ((SpecialCoursPresenter)presenter).getFormateursByCours(cours);
         }
     }
-    public void remove()
-    {
-        System.out.println("numéro de ligne : ");
-        int nl =  sc.nextInt()-1;
-        sc.skip("\n");
-        if (nl >= 0) {
-            Cours cours = lc.get(nl);
-            presenter.removeCours(cours);
-        }
-    }
+
 }

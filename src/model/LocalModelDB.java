@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class LocalModelDB implements DAO
+public class LocalModelDB implements DAO<Local>
 {
     private Connection dbConnect;
     public LocalModelDB()
@@ -21,18 +21,19 @@ public class LocalModelDB implements DAO
         }
     }
 
+
     @Override
-    public Object add(Object o) {
+    public Local add(Local o) {
         return null;
     }
 
     @Override
-    public boolean remove(Object o) {
+    public boolean remove(Local o) {
         return false;
     }
 
     @Override
-    public boolean update(Object o) {
+    public boolean update(Local o) {
         return false;
     }
 
@@ -69,4 +70,11 @@ public class LocalModelDB implements DAO
         DBConnection.closeConnection();
         return null;
     }
+
+    @Override
+    public Local read(Local rech) {
+        return getByID(rech.getId());
+    }
+
+
 }

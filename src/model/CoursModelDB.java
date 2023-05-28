@@ -175,6 +175,12 @@ public class CoursModelDB implements DAO
         return null;
     }
 
+    @Override
+    public Cours read(Object rech) {
+        Cours c=(Cours) rech;
+        return getByID(c.getId());
+    }
+
 
     public Cours getByCodeCours(String cc) {
         String query1="select * from APICOURS where CODECOURS like ?";

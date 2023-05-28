@@ -2,11 +2,25 @@ package metier;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Cours
 {
     private int id,heures;
     private String codeCours,description;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cours cours = (Cours) o;
+        return id == cours.id && heures == cours.heures && codeCours.equals(cours.codeCours);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, heures, codeCours);
+    }
 
     private List<SessionCours> lSessions;
 

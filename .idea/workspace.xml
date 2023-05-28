@@ -5,17 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="-add CRUD for Cours functionnal(need Exceptions)">
-      <change afterPath="$PROJECT_DIR$/src/model/LocalModelDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presenter/FormateurPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/FormateurViewConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenter/Presenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenter/SpecialCoursPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenter/SpecialFormateur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utilitaires/Utilitaire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/AbstractViewConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/metier/SessionCours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/SessionCours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metier/Cours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/Cours.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/CoursModel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/CoursModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CoursModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/FormateurModel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/FormateurModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/FormateurModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/LocalModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/LocalModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SessionCoursModel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presenter/CoursPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenter/CoursPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenter/FormateurPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenter/FormateurPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/CoursViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CoursViewConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/FormateurViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/FormateurViewConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ViewInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ViewInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -60,6 +70,25 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="presenter" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Exercice1_2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -78,6 +107,10 @@
       <workItem from="1679146852930" duration="122000" />
       <workItem from="1679225840760" duration="10363000" />
       <workItem from="1679322033635" duration="18767000" />
+      <workItem from="1679494089647" duration="515000" />
+      <workItem from="1680538510013" duration="697000" />
+      <workItem from="1683101959088" duration="332000" />
+      <workItem from="1685275233330" duration="13354000" />
     </task>
     <task id="LOCAL-00001" summary="-creation of metier classes">
       <created>1677500336513</created>

@@ -1,25 +1,27 @@
 package view;
 
+import metier.Cours;
+import metier.Formateur;
+import presenter.CoursPresenter;
+import presenter.Presenter;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class FormateurViewConsole implements ViewInterface
+public class FormateurViewConsole
 {
+    private Scanner sc;
+    private CoursPresenter presenter;
+    private List<Cours>lc;
 
-
-
-
-    @Override
-    public void setPresenter(Object presenter) {
-
+    public FormateurViewConsole()
+    {
+        lc= new ArrayList<>();
+        sc=new Scanner(System.in);
     }
 
-    @Override
-    public void setListDatas(List listD) {
 
-    }
 
-    @Override
-    public void affMsg(String msg) {
 
-    }
 }

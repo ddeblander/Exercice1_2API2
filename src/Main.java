@@ -3,6 +3,7 @@ import metier.Formateur;
 import metier.SessionCours;
 import model.*;
 import presenter.CoursPresenter;
+import presenter.Presenter;
 import view.CoursViewConsole;
 import view.ViewInterface;
 
@@ -15,7 +16,7 @@ public class Main {
 
     public static void main(String[] args)
     {
-        // sera implémenté dans la gestion SessionCours
+       /* // sera implémenté dans la gestion SessionCours
         SessionCoursModelDB db= new SessionCoursModelDB();
         List<SessionCours> lsc = db.getAll();
         System.out.println("List des sessions de cours avec local");
@@ -34,24 +35,32 @@ public class Main {
                 System.out.println(s.toString());
             }
 
-        }
+        }*/
 
 
+        DAO<Cours> cm= new CoursModelDB();
 
-        DAO cm= new CoursModelDB();
-
-        ViewInterface ci = new CoursViewConsole();
-        CoursPresenter cp = new CoursPresenter(cm,ci);
+        ViewInterface<Cours> ci = new CoursViewConsole();
+        //Presenter cp = new CoursPresenter(cm,ci,(cours1,cours2)->cours1.getCodeCours().compareTo(cours2.getCodeCours()));
+        Presenter cp = new CoursPresenter(cm, ci, (cours1, cours2) -> {
+            if (cours1 != null && cours2 != null) {
+                return cours1.getCodeCours().compareTo(cours2.getCodeCours());
+            } else {
+                // Gérer le cas où l'un des objets est null
+                return 0; // Ou une autre valeur appropriée selon vos besoins
+            }
+        });
         cp.start();
 
-        /*FormateurModelDB fd= new FormateurModelDB();
+
+       /* FormateurModelDB fd= new FormateurModelDB();
         List<Formateur> l;
         l= fd.getFormateurByCours(new Cours(1,40,"",""));
         for(Formateur f : l)
         {
             System.out.println(f.toString());
-        }*/
-
+        }
+*/
 
     }
 }

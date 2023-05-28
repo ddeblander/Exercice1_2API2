@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class SessionCoursModelDB implements DAO
+public class SessionCoursModelDB implements DAO<Cours>
 {
     CoursModelDB cDB;
     LocalModelDB lDB;
@@ -35,17 +35,17 @@ public class SessionCoursModelDB implements DAO
     }
 
     @Override
-    public Object add(Object o) {
+    public Cours add(Cours o) {
         return null;
     }
 
     @Override
-    public boolean remove(Object o) {
+    public boolean remove(Cours o) {
         return false;
     }
 
     @Override
-    public boolean update(Object o) {
+    public boolean update(Cours o) {
         return false;
     }
 
@@ -87,7 +87,12 @@ public class SessionCoursModelDB implements DAO
     }
 
     @Override
-    public Object getByID(int id) {
+    public Cours getByID(int id) {
         return null;
+    }
+
+    @Override
+    public Cours read(Cours rech) {
+        return getByID(rech.getId());
     }
 }
