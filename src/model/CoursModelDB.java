@@ -35,8 +35,8 @@ public class CoursModelDB implements DAO
     public Cours add(Object o) {
         Cours c=(Cours) o;
 
-        String query1 = "insert into EXO1_COURS(COURS,description,heures) values(?,?,?)";
-        String query2 = "select * from EXO1_COURS where COURS= ? and description =? and heures =?";
+        String query1 = "insert into EXO1_COURS(CODE,description,heures) values(?,?,?)";
+        String query2 = "select * from EXO1_COURS where CODE= ? and description =? and heures =?";
         try (PreparedStatement pstm1 = dbConnect.prepareStatement(query1);
              PreparedStatement pstm2 = dbConnect.prepareStatement(query2))
         {
