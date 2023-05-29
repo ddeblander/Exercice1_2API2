@@ -35,8 +35,8 @@ public class CoursModelDB implements DAO
     public Cours add(Object o) {
         Cours c=(Cours) o;
 
-        String query1 = "insert into APICOURS(codecours,description,heures) values(?,?,?)";
-        String query2 = "select * from APICOURS where codecours= ? and description =? and heures =?";
+        String query1 = "insert into EXO1_COURS(COURS,description,heures) values(?,?,?)";
+        String query2 = "select * from EXO1_COURS where COURS= ? and description =? and heures =?";
         try (PreparedStatement pstm1 = dbConnect.prepareStatement(query1);
              PreparedStatement pstm2 = dbConnect.prepareStatement(query2))
         {
@@ -60,12 +60,14 @@ public class CoursModelDB implements DAO
                 } else {
                     System.out.println("erreur lors de l'insertion ,numero de cours introuvable");
                 }
+                DBConnection.closeConnection();
 
             }
 
 
         }catch (Exception e)
         {
+            DBConnection.closeConnection();
             System.out.println(e.toString());
         }
 
@@ -75,7 +77,7 @@ public class CoursModelDB implements DAO
     @Override
     public boolean remove(Object o) {
         Cours c=(Cours) o;
-        String query = "delete  from apicours   where id = ?";
+        String query = "delete  from EXO1_COURS   where idcours = ?";
         try( PreparedStatement pstm = dbConnect.prepareStatement(query))
         {
             pstm.setInt(1,c.getId());
@@ -94,7 +96,7 @@ public class CoursModelDB implements DAO
     public boolean update(Object o)
     {
         Cours c=(Cours) o;
-        String query = "update apicours set heures = ? ,description= ?  where codecours = ?";
+        String query = "update EXO1_COURS set heures = ? ,description= ?  where code = ?";
         try( PreparedStatement pstm = dbConnect.prepareStatement(query))
         {
             pstm.setInt(1,c.getHeures());
@@ -119,7 +121,7 @@ public class CoursModelDB implements DAO
             lCours= new ArrayList<>();
         }
 
-        String query1="select * from APICOURS order by ID";
+        String query1="select * from EXO1_COURS order by CODE";
         try (PreparedStatement pstm = dbConnect.prepareStatement(query1))
         {
 
@@ -127,8 +129,8 @@ public class CoursModelDB implements DAO
             {
                 while(rs.next())
                 {
-                    id = rs.getInt("ID");
-                    codecours = rs.getString("CODECOURS");
+                    id = rs.getInt("IDCOURS");
+                    codecours = rs.getString("CODE");
                     description = rs.getString("DESCRIPTION");
                     heures = rs.getInt("HEURES");
                     lCours.add(new Cours(id,heures,codecours,description));
@@ -148,7 +150,7 @@ public class CoursModelDB implements DAO
     @Override
     public Cours getByID(int id)
     {
-        String query1="select * from APICOURS where ID = ?";
+        String query1="select * from EXO1_COURS where IDCOURS = ?";
 
         try (PreparedStatement pstm = dbConnect.prepareStatement(query1))
         {
@@ -157,8 +159,8 @@ public class CoursModelDB implements DAO
             {
                 while(rs.next())
                 {
-                    id = rs.getInt("ID");
-                    codecours = rs.getString("CODECOURS");
+                    id = rs.getInt("IDCOURS");
+                    codecours = rs.getString("CODE");
                     description = rs.getString("DESCRIPTION");
                     heures = rs.getInt("HEURES");
                     return new Cours(id,heures,codecours,description);
@@ -183,7 +185,7 @@ public class CoursModelDB implements DAO
 
 
     public Cours getByCodeCours(String cc) {
-        String query1="select * from APICOURS where CODECOURS like ?";
+        String query1="select * from APICOURS where CODE like ?";
 
         try (PreparedStatement pstm = dbConnect.prepareStatement(query1))
         {
@@ -192,8 +194,8 @@ public class CoursModelDB implements DAO
             {
                 while(rs.next())
                 {
-                    id = rs.getInt("ID");
-                    codecours = rs.getString("CODECOURS");
+                    id = rs.getInt("IDCOURS");
+                    codecours = rs.getString("CODE");
                     description = rs.getString("DESCRIPTION");
                     heures = rs.getInt("HEURES");
                     return new Cours(id,heures,codecours,description);

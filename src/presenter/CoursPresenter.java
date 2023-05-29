@@ -12,8 +12,6 @@ import java.util.List;
 
 public class CoursPresenter extends Presenter<Cours> implements SpecialCoursPresenter
 {
-    private DAO model;
-    private Comparator<Cours> cmp;
     FormateurModelDB fmDB= new FormateurModelDB();
     private ViewInterface view;
 
@@ -28,7 +26,7 @@ public class CoursPresenter extends Presenter<Cours> implements SpecialCoursPres
     @Override
     public void getFormateursByCours(Cours c)
     {
-        List<Formateur> lf=fmDB.getFormateurByCours(c);
-        view.setListDatas(lf,cmp);
+        /*List<Formateur> lf=fmDB.getFormateurByCours(c);
+        view.setListDatas(lf,cmp);*/
     }
 }

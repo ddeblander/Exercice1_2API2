@@ -19,6 +19,11 @@ public class Formateur
         setNom(nom);
         setPrenom(prenom);
     }
+    public Formateur(String matricule, String nom, String prenom) {
+        setMatricule(matricule);
+        setNom(nom);
+        setPrenom(prenom);
+    }
 
     /**
      *

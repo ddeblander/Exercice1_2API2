@@ -60,6 +60,8 @@ public class CoursViewConsole extends AbstractViewConsole<Cours>
             System.out.println("introduire nouvelle heures cours :");
             cours.setHeures(sc.nextInt());
             presenter.update(cours);
+            presenter.getAll();
+            affListe(ldatas);
         }
     }
     @Override

@@ -44,7 +44,7 @@ public class LocalModelDB implements DAO<Local>
 
     @Override
     public Local getByID(int id) {
-        String query = "select * from APILOCAL where id= ?";
+        String query = "select * from EXO1_LOCAL where id= ?";
         try (PreparedStatement pstm = dbConnect.prepareStatement(query))
         {
             pstm.setInt(1, id);

@@ -3,14 +3,15 @@ import metier.Formateur;
 import metier.SessionCours;
 import model.*;
 import presenter.CoursPresenter;
+import presenter.FormateurPresenter;
 import presenter.Presenter;
+import utilitaires.Utilitaire;
 import view.CoursViewConsole;
+import view.FormateurViewConsole;
 import view.ViewInterface;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.text.Normalizer;
+import java.util.*;
 
 public class Main {
 
@@ -50,7 +51,30 @@ public class Main {
                 return 0; // Ou une autre valeur appropriée selon vos besoins
             }
         });
-        cp.start();
+
+        DAO<Formateur> fm= new FormateurModelDB();
+        ViewInterface<Formateur> fi = new FormateurViewConsole();
+        Presenter fp = new FormateurPresenter(fm,fi,(formateur1,formateur2)->formateur1.getMatricule().compareTo(formateur2.getMatricule()));
+
+
+        List<String> loptions = Arrays.asList("Cours","Formateurs","Infos","Locals","SessionCours","fin");
+        do {
+            int ch = Utilitaire.choixListe(loptions);
+            switch (ch){
+                case 1: cp.start();
+                    break;
+                case 2: fp.start();
+                    break;
+                case 3: ;
+                    break;
+                case 4: ;
+                    break;
+                case 5: ;
+                    break;
+
+                case 6 : System.exit(0);
+            }
+        }while(true);
 
 
        /* FormateurModelDB fd= new FormateurModelDB();

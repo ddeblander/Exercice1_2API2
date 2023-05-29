@@ -56,7 +56,7 @@ public class SessionCoursModelDB implements DAO<Cours>
             lSC= new ArrayList<>();
         }
 
-        String query1="select * from APISESSIONCOURS order by ID";
+        String query1="select * from EXO1_SESSIONCOURS order by ID";
         try (PreparedStatement pstm = dbConnect.prepareStatement(query1))
         {
 
