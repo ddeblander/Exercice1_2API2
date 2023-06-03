@@ -58,7 +58,7 @@ public class CoursViewConsole extends AbstractViewConsole<Cours>
             Cours cours = ldatas.get(nl);
             //System.out.println("introduire la nouvelle Description du cours :");
             cours.setDescription(modifyIfNotBlank("Description",cours.getDescription()));
-            //System.out.println("introduire nouvelle heures cours :");
+            System.out.println("introduire nouvelle heures cours :");
             cours.setHeures(sc.nextInt());
             presenter.update(cours);
             presenter.getAll();

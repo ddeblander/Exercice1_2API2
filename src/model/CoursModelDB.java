@@ -45,6 +45,8 @@ public class CoursModelDB implements DAO
                 if (rs.next()) {
                     int nc = rs.getInt(1);
                     System.out.println("numero de cours inséré =" + nc);
+                    c.setId(nc);
+                    return c;
                 } else {
                     System.out.println("erreur lors de l'insertion ,numero de cours introuvable");
                 }

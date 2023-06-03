@@ -26,6 +26,13 @@ public class Local
 
         lSessions= new ArrayList<>();
     }
+    public Local( int places, String sigle, String description) {
+        setPlaces(places);
+        setSigle(sigle);
+        setDescription(description);
+
+        lSessions= new ArrayList<>();
+    }
 
     /**
      *

@@ -1,13 +1,15 @@
 package metier;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+
+import static utilitaires.Utilitaire.getDateFrench;
 
 public class SessionCours
 {
     private int id,nbreJours;
     private Date dateDebut;
     private Cours cour;
-    private ArrayList<Formateur> listFormateur;
     private Local Local;
     /**
      *
@@ -23,7 +25,12 @@ public class SessionCours
         setDateDebut(dateDebut);
         setCour(cour);
         setLocal(local);
-        listFormateur= new ArrayList<>();
+    }
+    public SessionCours(int nbreJours, Date dateDebut,Cours cour,Local local) {
+        setNbreJours(nbreJours);
+        setDateDebut(dateDebut);
+        setCour(cour);
+        setLocal(local);
     }
 
 
@@ -113,70 +120,17 @@ public class SessionCours
      *
      * @return
      */
-    public ArrayList<Formateur> getListFormateur()
-    {
-        return listFormateur;
-    }
 
-    /**
-     *
-     * @param list
-     */
-    public void setListFormateur(ArrayList<Formateur> list)
-    {
-        listFormateur=list;
-    }
-
-    /**
-     *
-     * @param f
-     */
-    public void addFormateur(Formateur f)
-    {
-        listFormateur.add(f);
-    }
-
-    /**
-     *
-     * @param f
-     */
-    public void deleteFormateur(Formateur f)
-    {
-        if(!listFormateur.isEmpty())
-        {
-            listFormateur.remove(f);
-        }
-
-    }
-
-    /**
-     *
-     * @param f
-     * @return
-     */
-    public boolean updateFormateur(Formateur f)
-    {
-        int ind=listFormateur.indexOf(f);
-        if(ind>-1)
-        {
-            listFormateur.add(ind,f);
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-    }
 
     @Override
     public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return "SessionCours{" +
                 "id=" + id +
                 ", nbreJours=" + nbreJours +
-                ", dateDebut=" + dateDebut +
+                ", dateDebut=" + sdf.format(dateDebut) +
                 ", cour=" + cour +
-                ", listFormateur=" + listFormateur +
+                ", listFormateur="  +
                 ", Local=" + Local +
                 '}';
     }

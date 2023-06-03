@@ -4,6 +4,7 @@ package presenter;
 import model.DAO;
 import view.ViewInterface;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -25,7 +26,15 @@ public abstract class Presenter<T> {
 
     public List<T> getAll(){
         List<T> l = model.getAll();
-        l.sort(cmp);
+        try
+        {
+            l.sort(cmp);
+        }catch (NullPointerException e)
+        {
+            System.out.println("liste vide");
+            return new ArrayList<>();
+        }
+
         return l;
     }
 

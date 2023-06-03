@@ -1,14 +1,11 @@
 import metier.Cours;
 import metier.Formateur;
+import metier.Local;
 import metier.SessionCours;
 import model.*;
-import presenter.CoursPresenter;
-import presenter.FormateurPresenter;
-import presenter.Presenter;
+import presenter.*;
 import utilitaires.Utilitaire;
-import view.CoursViewConsole;
-import view.FormateurViewConsole;
-import view.ViewInterface;
+import view.*;
 
 import java.text.Normalizer;
 import java.util.*;
@@ -43,18 +40,19 @@ public class Main {
 
         ViewInterface<Cours> ci = new CoursViewConsole();
         //Presenter cp = new CoursPresenter(cm,ci,(cours1,cours2)->cours1.getCodeCours().compareTo(cours2.getCodeCours()));
-        Presenter cp = new CoursPresenter(cm, ci, (cours1, cours2) -> {
-            if (cours1 != null && cours2 != null) {
-                return cours1.getCodeCours().compareTo(cours2.getCodeCours());
-            } else {
-                // Gérer le cas où l'un des objets est null
-                return 0; // Ou une autre valeur appropriée selon vos besoins
-            }
-        });
+        Presenter cp = new CoursPresenter(cm, ci, (cours1, cours2) -> cours1.getCodeCours().compareTo(cours2.getCodeCours()));
 
         DAO<Formateur> fm= new FormateurModelDB();
         ViewInterface<Formateur> fi = new FormateurViewConsole();
         Presenter fp = new FormateurPresenter(fm,fi,(formateur1,formateur2)->formateur1.getMatricule().compareTo(formateur2.getMatricule()));
+
+        DAO<Local> lm= new LocalModelDB();
+        ViewInterface<Local> li = new LocalViewConsole();
+        Presenter lp = new LocalPresenter(lm,li,(local1, local2)->local1.getSigle().compareTo(local2.getSigle()));
+
+        DAO<SessionCours> ssm= new SessionCoursModelDB();
+        ViewInterface<SessionCours> ssi = new SessionCoursViewConsole();
+        Presenter ssp = new SessionCoursPresenter(ssm,ssi,(session1, session2)->Integer.compare(session1.getId(),session2.getId()));
 
 
         List<String> loptions = Arrays.asList("Cours","Formateurs","Infos","Locals","SessionCours","fin");
@@ -67,9 +65,9 @@ public class Main {
                     break;
                 case 3: ;
                     break;
-                case 4: ;
+                case 4: lp.start();
                     break;
-                case 5: ;
+                case 5: ssp.start();
                     break;
 
                 case 6 : System.exit(0);
