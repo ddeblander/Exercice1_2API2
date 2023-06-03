@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import static utilitaires.Utilitaire.affListe;
+import static utilitaires.Utilitaire.modifyIfNotBlank;
 
 public class CoursViewConsole extends AbstractViewConsole<Cours>
 {
@@ -55,9 +56,9 @@ public class CoursViewConsole extends AbstractViewConsole<Cours>
         sc.skip("\n");
         if (nl >= 0) {
             Cours cours = ldatas.get(nl);
-            System.out.println("introduire la nouvelle Description du cours :");
-            cours.setDescription(sc.nextLine());
-            System.out.println("introduire nouvelle heures cours :");
+            //System.out.println("introduire la nouvelle Description du cours :");
+            cours.setDescription(modifyIfNotBlank("Description",cours.getDescription()));
+            //System.out.println("introduire nouvelle heures cours :");
             cours.setHeures(sc.nextInt());
             presenter.update(cours);
             presenter.getAll();
@@ -67,6 +68,7 @@ public class CoursViewConsole extends AbstractViewConsole<Cours>
     @Override
     public void special()
     {
+        sc = new Scanner(System.in);
         System.out.println("numéro de ligne : ");
         int nl =  sc.nextInt()-1;
         sc.skip("\n");

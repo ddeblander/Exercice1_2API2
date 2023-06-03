@@ -9,15 +9,13 @@ import view.ViewInterface;
 import java.util.Comparator;
 import java.util.List;
 
-public class FormateurPresenter extends Presenter<Formateur>
+public class FormateurPresenter extends Presenter<Formateur> implements SpecialFormateur
 {
-    private FormateurModelDB model;
-    private ViewInterface view;
+
 
     public FormateurPresenter(DAO<Formateur> model, ViewInterface<Formateur> view, Comparator<Formateur> cmp) {
         super(model, view, cmp);
     }
-
 
 
 

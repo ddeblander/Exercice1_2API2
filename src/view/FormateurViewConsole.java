@@ -15,15 +15,6 @@ import static utilitaires.Utilitaire.modifyIfNotBlank;
 
 public class FormateurViewConsole extends AbstractViewConsole<Formateur>
 {
-    private Scanner sc;
-    private FormateurPresenter presenter;
-    private List<Formateur>lc;
-
-    public FormateurViewConsole()
-    {
-        lc= new ArrayList<>();
-        sc=new Scanner(System.in);
-    }
 
 
     @Override
@@ -40,12 +31,12 @@ public class FormateurViewConsole extends AbstractViewConsole<Formateur>
         sc.skip("\n");
         if (nl >= 0) {
             Formateur fo = ldatas.get(nl);
-            System.out.println("introduire le matricule :");
-            fo.setMatricule(modifyIfNotBlank(sc.nextLine(),fo.getMatricule()));
-            System.out.println("introduire nom :");
-            fo.setNom(modifyIfNotBlank(sc.nextLine(),fo.getNom()));
-            System.out.println("introduire prenom :");
-            fo.setNom(modifyIfNotBlank(sc.nextLine(),fo.getPrenom()));
+            //System.out.println("introduire le matricule :");
+            fo.setMatricule(modifyIfNotBlank("matricule",fo.getMatricule()));
+            //System.out.println("introduire nom :");
+            fo.setNom(modifyIfNotBlank("nom",fo.getNom()));
+            //System.out.println("introduire prenom :");
+            fo.setPrenom(modifyIfNotBlank("prenom",fo.getPrenom()));
             presenter.update(fo);
             presenter.getAll();
             affListe(ldatas);

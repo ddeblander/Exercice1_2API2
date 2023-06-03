@@ -60,10 +60,9 @@ public class FormateurModelDB implements DAO<Formateur>
     @Override
     public Formateur add(Formateur o)
     {
-        String query1="insert into EXO1_FORMATEUR(matricule,nom,prenom)" +
+        String query1="insert into APIFORMATEUR(matricule,nom,prenom)" +
                 "values(?,?,?)";
-        String query2="select * from EXO1_FORMATEUR" +
-                "where MATRICULE=? and NOM=? and PRENOM=?";
+        String query2="select * from APIFORMATEUR where MATRICULE=? and NOM=? and PRENOM=?";
         try (PreparedStatement pstm = dbConnect.prepareStatement(query1);
              PreparedStatement pstm2 = dbConnect.prepareStatement(query2))
         {
@@ -93,18 +92,43 @@ public class FormateurModelDB implements DAO<Formateur>
                 }
         }catch (Exception e)
         {
-            System.out.println(e);
+            System.out.println(e.toString()+" erreur BDD select");
         }
         return null;
     }
 
     @Override
     public boolean remove(Formateur o) {
+        String query = "delete  from apiformateur   where id = ?";
+        try( PreparedStatement pstm = dbConnect.prepareStatement(query))
+        {
+            pstm.setInt(1,o.getId());
+            pstm.executeQuery();
+            return true;
+        }
+        catch (SQLException e) {
+            System.out.println("erreur SQL =" + e);
+        }
+        DBConnection.closeConnection();
         return false;
     }
 
     @Override
     public boolean update(Formateur o) {
+        String query = "update apiformateur set matricule = ? ,nom= ?,prenom = ?  where id=?";
+        try( PreparedStatement pstm = dbConnect.prepareStatement(query))
+        {
+            pstm.setString(1,o.getMatricule());
+            pstm.setString(2,o.getNom());
+            pstm.setString(3,o.getPrenom());
+            pstm.setInt(4,o.getId());
+            pstm.executeQuery();
+            return true;
+        }
+        catch (SQLException e) {
+            System.out.println("erreur SQL =" + e);
+        }
+        DBConnection.closeConnection();
         return false;
     }
 
@@ -112,7 +136,7 @@ public class FormateurModelDB implements DAO<Formateur>
     public List<Formateur> getAll() {
         lForm=new ArrayList<>();
         Formateur fInsert;
-        String query1="select * from EXO1_FORMATEUR order by ID";
+        String query1="select * from APIFORMATEUR order by ID";
         try (PreparedStatement pstm = dbConnect.prepareStatement(query1))
         {
 
