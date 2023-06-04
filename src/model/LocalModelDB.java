@@ -82,12 +82,13 @@ public class LocalModelDB implements DAO<Local>
 
     @Override
     public boolean update(Local o) {
-        String query = "update apilocal set sigle = ? ,places= ?  where description = ?";
+        String query = "update apilocal set sigle = ? ,places= ?, description = ? where id = ?";
         try( PreparedStatement pstm = dbConnect.prepareStatement(query))
         {
-            pstm.setInt(1,o.getPlaces());
+            pstm.setString(1,o.getSigle());
             pstm.setInt(2,o.getPlaces());
             pstm.setString(3,o.getDescription());
+            pstm.setInt(4,o.getId());
             pstm.executeQuery();
             return true;
         }
