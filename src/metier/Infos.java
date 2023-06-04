@@ -1,18 +1,29 @@
 package metier;
 
+import java.text.Normalizer;
+
 public class Infos
 {
     private int nh;
-    Formateur formateur;
+    private Formateur formateur;
+    private SessionCours ssc;
+
+
 
 
     /**
      *
      * @param formateur
      */
-    public Infos(Formateur formateur, int nh) {
+    public Infos( int nh,Formateur formateur,SessionCours ssc) {
         setNh(nh);
-        setId_formateur(formateur);
+        setFormateur(formateur);
+        setSessionCours(ssc);
+
+    }
+    public Infos(Formateur formateur,SessionCours ssc) {
+        setFormateur(formateur);
+        setSessionCours(ssc);
 
     }
 
@@ -34,36 +45,38 @@ public class Infos
         return formateur;
     }
 
+    public void setFormateur(Formateur f)
+    {
 
+        this.formateur=f;
+    }
+    public SessionCours getSessionCours() {
+        return ssc;
+    }
+
+    public void setSessionCours(SessionCours ssc)
+    {
+
+        this.ssc=ssc;
+    }
     /**
      *
      * @param nhi
      * @return
      */
-    private Boolean setNh(int nhi) {
+    public void setNh(int nhi) {
 
         nh=nhi;
-        return true;
-        //Todo vérifier que le nombre total d’heures_formateur pour une session correspond bien au nombre total d’heures du cours auquel la session correspond.
+
     }
 
-    /**
-     *
-     * @param formateur
-     */
-    public void setId_formateur(Formateur formateur) {
-        this.formateur = formateur;
-    }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public String toString() {
         return "Infos{" +
                 "nh=" + nh +
                 ", formateur=" + formateur +
+                ", ssc=" + ssc +
                 '}';
     }
 }

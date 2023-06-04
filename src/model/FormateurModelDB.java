@@ -162,7 +162,31 @@ public class FormateurModelDB implements DAO<Formateur>
     }
 
     @Override
-    public Formateur getByID(int id) {
+    public Formateur getByID(int id)
+    {
+        Formateur f;
+        String query1="select * from APIFORMATEUR where  ID = ?";
+        try (PreparedStatement pstm = dbConnect.prepareStatement(query1))
+        {
+            pstm.setInt(1,id);
+            try (ResultSet rs = pstm.executeQuery())
+            {
+
+                while(rs.next())
+                {
+
+                    f=new Formateur(rs.getInt("ID"),rs.getString("MATRICULE"),
+                            rs.getString("NOM"),rs.getString("PRENOM"));
+                    return f;
+                }
+            }
+
+
+        } catch (SQLException e) {
+            System.out.println("erreur " + e);
+
+        }
+        DBConnection.closeConnection();
         return null;
     }
 

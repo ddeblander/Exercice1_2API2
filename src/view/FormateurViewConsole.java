@@ -26,21 +26,28 @@ public class FormateurViewConsole extends AbstractViewConsole<Formateur>
     @Override
     protected void update()
     {
-        System.out.println("numéro de ligne : ");
-        int nl =  sc.nextInt()-1;
-        sc.skip("\n");
-        if (nl >= 0) {
-            Formateur fo = ldatas.get(nl);
-            //System.out.println("introduire le matricule :");
-            fo.setMatricule(modifyIfNotBlank("matricule",fo.getMatricule()));
-            //System.out.println("introduire nom :");
-            fo.setNom(modifyIfNotBlank("nom",fo.getNom()));
-            //System.out.println("introduire prenom :");
-            fo.setPrenom(modifyIfNotBlank("prenom",fo.getPrenom()));
-            presenter.update(fo);
-            presenter.getAll();
-            affListe(ldatas);
+        try{
+            System.out.println("numéro de ligne : ");
+            int nl =  sc.nextInt()-1;
+            sc.skip("\n");
+            if (nl >= 0) {
+                Formateur fo = ldatas.get(nl);
+                //System.out.println("introduire le matricule :");
+                fo.setMatricule(modifyIfNotBlank("matricule",fo.getMatricule()));
+                //System.out.println("introduire nom :");
+                fo.setNom(modifyIfNotBlank("nom",fo.getNom()));
+                //System.out.println("introduire prenom :");
+                fo.setPrenom(modifyIfNotBlank("prenom",fo.getPrenom()));
+                presenter.update(fo);
+                ldatas=presenter.getAll();
+                affListe(ldatas);
+            }
+        }catch (Exception e)
+        {
+            System.out.println("Veuillez insérez uniquement des chiffres pour les parties numériques");
+            sc= new Scanner(System.in);
         }
+
 
     }
 

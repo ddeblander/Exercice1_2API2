@@ -59,10 +59,13 @@ public abstract class Presenter<T> {
 
     }
 
-    public void search(T rech) {
+    public T search(T rech) {
          T elt= model.read(rech);
-        if(elt==null) view.affMsg("recherche infructueuse");
-        else view.affMsg(elt.toString());
+        if(elt==null)
+        {
+            return null;
+        }
+        else return elt;
     }
 
     public T selection(){

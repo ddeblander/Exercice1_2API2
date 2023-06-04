@@ -1,7 +1,4 @@
-import metier.Cours;
-import metier.Formateur;
-import metier.Local;
-import metier.SessionCours;
+import metier.*;
 import model.*;
 import presenter.*;
 import utilitaires.Utilitaire;
@@ -54,6 +51,10 @@ public class Main {
         ViewInterface<SessionCours> ssi = new SessionCoursViewConsole();
         Presenter ssp = new SessionCoursPresenter(ssm,ssi,(session1, session2)->Integer.compare(session1.getId(),session2.getId()));
 
+        DAO<Infos> im= new InfosModelDB();
+        ViewInterface<Infos> ii = new InfosViewConsole();
+        Presenter ip = new InfosPresenter(im,ii,(info1, info2)->Integer.compare(info1.getNh(),info2.getNh()));
+
 
         List<String> loptions = Arrays.asList("Cours","Formateurs","Infos","Locals","SessionCours","fin");
         do {
@@ -63,7 +64,7 @@ public class Main {
                     break;
                 case 2: fp.start();
                     break;
-                case 3: ;
+                case 3: ip.start();
                     break;
                 case 4: lp.start();
                     break;

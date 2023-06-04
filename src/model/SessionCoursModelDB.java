@@ -15,9 +15,9 @@ import java.util.List;
 
 public class SessionCoursModelDB implements DAO<SessionCours>
 {
-    CoursModelDB cDB;
-    LocalModelDB lDB;
-    List<SessionCours> lSC;
+   private CoursModelDB cDB;
+    private LocalModelDB lDB;
+    private List<SessionCours> lSC;
     private Connection dbConnect;
     public SessionCoursModelDB()
     {
@@ -49,11 +49,7 @@ public class SessionCoursModelDB implements DAO<SessionCours>
             pstm1.setInt(3,o.getCour().getId());
             pstm1.setInt(4,o.getLocal().getId());
             int res=pstm1.executeUpdate();
-            if(res == -20000)
-            {
-                System.out.println("Local non disponible durant la date choisis");
-                return null;
-            }
+
             System.out.println("res"+res);
             pstm2.setDate(1,new java.sql.Date( o.getDateDebut().getTime()));
             pstm2.setInt(2,o.getNbreJours());
@@ -69,6 +65,15 @@ public class SessionCoursModelDB implements DAO<SessionCours>
                     System.out.println("erreur lors de l'insertion de la session du cours");
                 }
             }
+        }catch (SQLException e)
+        {
+            if(e.getErrorCode()==20000)
+            {
+
+                System.out.println("Local non disponible durant cette date.");
+                return null;
+            }
+            System.out.println(e.toString());
         }catch (Exception e)
         {
             System.out.println(e.toString());
@@ -96,11 +101,13 @@ public class SessionCoursModelDB implements DAO<SessionCours>
     @Override
     public boolean update(SessionCours o)
     {
-        String query = "update apisessioncours set datedebut = ? ,nbrejours= ?";
+        String query = "update apisessioncours set datedebut = ? ,nbrejours= ? where ID= ?";
+
         try( PreparedStatement pstm = dbConnect.prepareStatement(query))
         {
             pstm.setDate(1,new java.sql.Date( o.getDateDebut().getTime()));
             pstm.setInt(2,o.getNbreJours());
+            pstm.setInt(3,o.getId());
             pstm.executeQuery();
             return true;
         }

@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="- change methode getFormateurBycours to avoid to switch to FormateurPresenter instead of staying in the CoursPresenter">
-      <change afterPath="$PROJECT_DIR$/src/presenter/LocalPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/presenter/SessionCoursPresenter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/LocalViewConsole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/SessionCoursViewConsole.java" afterDir="false" />
+    <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="- viewer and presenter working at CRUD for Formation,Cours,Local(trigger in DB) &#10;CRD done on SessionCOurs needed to create the updated one.">
+      <change afterPath="$PROJECT_DIR$/src/model/InfosModelDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/presenter/InfosPresenter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/InfosViewConsole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/SpecialCoursView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/metier/Local.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/Local.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/metier/SessionCours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/SessionCours.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/CoursModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CoursModelDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/LocalModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/LocalModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metier/Infos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/metier/Infos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/FormateurModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/FormateurModelDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenter/FormateurPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenter/FormateurPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presenter/Presenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presenter/Presenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/presenter/SpecialFormateur.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/CoursViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CoursViewConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/FormateurViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/FormateurViewConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/LocalViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/LocalViewConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/SessionCoursViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/SessionCoursViewConsole.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -106,7 +109,8 @@
       <workItem from="1685275233330" duration="13670000" />
       <workItem from="1685389571939" duration="3802000" />
       <workItem from="1685521584666" duration="5074000" />
-      <workItem from="1685787090633" duration="20603000" />
+      <workItem from="1685787090633" duration="20725000" />
+      <workItem from="1685874929462" duration="19652000" />
     </task>
     <task id="LOCAL-00001" summary="-creation of metier classes">
       <created>1677500336513</created>
@@ -171,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685788032771</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- viewer and presenter working at CRUD for Formation,Cours,Local(trigger in DB) &#10;CRD done on SessionCOurs needed to create the updated one.">
+      <created>1685831190873</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685831190873</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +209,7 @@
     <MESSAGE value="- wrong DB ! I had to change the user ORA19 to ORA47 !" />
     <MESSAGE value="- in waiting to the Legrand's answer about the mistake between Ora19 and ora47... To recreate the EXO1_COURS Table to correspond to the UML" />
     <MESSAGE value="- change methode getFormateurBycours to avoid to switch to FormateurPresenter instead of staying in the CoursPresenter" />
-    <option name="LAST_COMMIT_MESSAGE" value="- change methode getFormateurBycours to avoid to switch to FormateurPresenter instead of staying in the CoursPresenter" />
+    <MESSAGE value="- viewer and presenter working at CRUD for Formation,Cours,Local(trigger in DB) &#10;CRD done on SessionCOurs needed to create the updated one." />
+    <option name="LAST_COMMIT_MESSAGE" value="- viewer and presenter working at CRUD for Formation,Cours,Local(trigger in DB) &#10;CRD done on SessionCOurs needed to create the updated one." />
   </component>
 </project>
