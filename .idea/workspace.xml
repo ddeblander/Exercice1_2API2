@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="- the CRUD+ALL exercices is done and running perfectly">
+    <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="- Question 1 et 2 rajouté et fonctionnelles">
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/DPMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/Element.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/Local2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DesignPatterns/Site.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/LocalModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/LocalModelDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/LocalViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/LocalViewConsole.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -56,10 +57,24 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="DesignPatterns" />
       <recent name="presenter" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.DPMain">
+    <configuration name="DPMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DesignPatterns.DPMain" />
+      <module name="Exercice1_2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DesignPatterns.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Exercice1_2" />
@@ -69,6 +84,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DPMain" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -99,7 +115,7 @@
       <workItem from="1685521584666" duration="5074000" />
       <workItem from="1685787090633" duration="20725000" />
       <workItem from="1685874929462" duration="20331000" />
-      <workItem from="1686550979334" duration="7774000" />
+      <workItem from="1686550979334" duration="9882000" />
     </task>
     <task id="LOCAL-00001" summary="-creation of metier classes">
       <created>1677500336513</created>
@@ -178,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685901514234</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- Question 1 et 2 rajouté et fonctionnelles">
+      <created>1686558859372</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1686558859372</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +230,7 @@
     <MESSAGE value="- change methode getFormateurBycours to avoid to switch to FormateurPresenter instead of staying in the CoursPresenter" />
     <MESSAGE value="- viewer and presenter working at CRUD for Formation,Cours,Local(trigger in DB) &#10;CRD done on SessionCOurs needed to create the updated one." />
     <MESSAGE value="- the CRUD+ALL exercices is done and running perfectly" />
-    <option name="LAST_COMMIT_MESSAGE" value="- the CRUD+ALL exercices is done and running perfectly" />
+    <MESSAGE value="- Question 1 et 2 rajouté et fonctionnelles" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Question 1 et 2 rajouté et fonctionnelles" />
   </component>
 </project>
