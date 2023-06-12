@@ -7,6 +7,8 @@
     <list default="true" id="25718bf1-20eb-4d97-8bf7-17453374b372" name="Changes" comment="- the CRUD+ALL exercices is done and running perfectly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/LocalModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/LocalModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/SessionCoursModelDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/LocalViewConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/LocalViewConsole.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +99,7 @@
       <workItem from="1685521584666" duration="5074000" />
       <workItem from="1685787090633" duration="20725000" />
       <workItem from="1685874929462" duration="20331000" />
+      <workItem from="1686550979334" duration="7774000" />
     </task>
     <task id="LOCAL-00001" summary="-creation of metier classes">
       <created>1677500336513</created>

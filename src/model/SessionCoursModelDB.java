@@ -192,4 +192,40 @@ public class SessionCoursModelDB implements DAO<SessionCours>
     public SessionCours read(SessionCours rech) {
         return getByID(rech.getId());
     }
+
+
+//question 1
+    public List getSessionCourByLocal(Local l)
+    {
+        List<SessionCours> lscLocal = new ArrayList<>();
+        String query1="select * from apisessioncours  where ID_LOCAL= ?";
+        try (PreparedStatement pstm = dbConnect.prepareStatement(query1))
+        {
+            pstm.setInt(1,l.getId());
+            try (ResultSet rs = pstm.executeQuery())
+            {
+                while(rs.next())
+                {
+                    int id = rs.getInt("ID");
+                    Date datedebut = rs.getDate("DATEDEBUT");
+                    int nbrejours = rs.getInt("NBREJOURS");
+                    int idCours = rs.getInt("IDCOURS");
+                    int idlocal = rs.getInt("ID_LOCAL");
+                    Local local=lDB.getByID(idlocal);
+                    Cours cours=cDB.getByID(idCours);
+
+                    lSC.add(new SessionCours(id,nbrejours,datedebut,cours,local));
+                }
+                return lSC;
+            }
+
+
+        } catch (SQLException e) {
+            System.out.println("erreur " + e);
+
+        }
+        DBConnection.closeConnection();
+        return null;
+
+    }
 }
