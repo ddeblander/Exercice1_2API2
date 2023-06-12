@@ -3,6 +3,7 @@ package DesignPatterns;
 import metier.Local;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Site extends Element
@@ -46,21 +47,24 @@ public class Site extends Element
         ll.add(l);
     }
 
-    @Override
-    public int getLocal() {
-        int tot=0;
-        for (Element l2 : ll)
-        {
-            tot+=l2.getId();
-        }
-        return tot;
-    }
+
     @Override
     public String toString() {
         StringBuilder aff= new StringBuilder(getId()+" "+getNomSite()+"\n");
         for(Element e:ll){
             aff.append(e+"\n");
         }
-        return aff+" somme " +getNomSite() +" = "+getLocal()+"\n";
+        return aff+" somme " +getNomSite() +" = "+getNBPlaces()+"\n";
+    }
+
+    @Override
+    public int getNBPlaces() {
+        Iterator<Element> it= ll.iterator();
+        int nbplaces=0;
+        while (it.hasNext())
+        {
+            nbplaces+=it.next().getNBPlaces();
+        }
+        return nbplaces;
     }
 }

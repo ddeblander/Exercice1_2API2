@@ -83,11 +83,13 @@ public class Local2 extends Element
                 ", places=" + places +
                 ", sigle='" + sigle + '\'' +
                 ", description='" + description + '\'' +
+                ", NB places='" + getNBPlaces() + '\'' +
                 '}';
     }
 
+
     @Override
-    public int getLocal() {
-        return getId();
+    public int getNBPlaces() {
+        return getPlaces();
     }
 }

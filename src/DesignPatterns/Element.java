@@ -11,6 +11,6 @@ public abstract class Element
     public int getId() {
         return id;
     }
-    public abstract int getLocal();
+    public abstract int getNBPlaces();
 }
 

@@ -123,7 +123,7 @@ public class LocalViewConsole extends AbstractViewConsole<Local>
             sc= new Scanner(System.in);
         }
     }
-    //question 2
+    //question 23
     private void getLocalFreeByDate()
     {
         List<Local> lll = presenter.getAll();
