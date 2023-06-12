@@ -42,7 +42,7 @@ public class Site extends Element
     }
 
 
-    public void addLocal(Local2 l)
+    public void addLocal(Element l)
     {
         ll.add(l);
     }
@@ -51,10 +51,15 @@ public class Site extends Element
     @Override
     public String toString() {
         StringBuilder aff= new StringBuilder(getId()+" "+getNomSite()+"\n");
+        if (getSite()!=null)
+        {
+            aff.append(getSite().toString());
+        }
+
         for(Element e:ll){
             aff.append(e+"\n");
         }
-        return aff+" somme " +getNomSite() +" = "+getNBPlaces()+"\n";
+        return aff+" somme des places " +getNomSite() +" = "+getNBPlaces()+"\n";
     }
 
     @Override
